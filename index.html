@@ -18,10 +18,36 @@
         }
 
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            background-image: url('images/PC_Banner.PNG');
+            background-size: cover;
+            background-position: center;
+            background-color: #000;
             color: white;
-            padding: 2rem 0;
+            padding: 5rem 2rem;
             text-align: center;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.2) 100%);
+            z-index: 1;
+        }
+
+        header h1, header .subtitle {
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
         }
 
         nav {
@@ -57,6 +83,41 @@
 
         section {
             margin: 4rem 0;
+        }
+
+        .about-content {
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+        }
+
+        .about-portrait {
+            flex-shrink: 0;
+            width: 240px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-text {
+            flex-grow: 1;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-portrait {
+                width: 200px;
+                height: 250px;
+            }
         }
 
         h1 {
@@ -191,7 +252,7 @@
 <body>
     <header>
         <h1>Hannah Redford</h1>
-        <p class="subtitle">PhD Candidate | Fire Ecologist | Remote Sensing Specialist</p>
+        <p class="subtitle">PhD | Fire Ecologist | Remote Sensing Specialist</p>
     </header>
 
     <nav>
@@ -206,9 +267,14 @@
     <div class="container">
         <section id="about">
             <h2>About Me</h2>
-            <p>Hi, I'm Hannah. I'm a recent PhD from the University of Washington, where I study ecosystem structure using lidar and remote sensing. Most of my work is in the Sierra Nevada, looking at how vegetation comes back after high-severity fire and how fuel structure shapes what happens to homes in the wildland-urban interface.</p>
-            <p>I came to remote sensing through fire ecology, with a background in prairie ecosystem ecology and prescribed fire research across Florida pine flatwoods. That history manifests in my perspective of fire as part of systems, not a disruption to them.</p>
-            <p>When I'm not working I'm usually cooking, foraging for mushrooms in the Cascades, or training for ultramarathons.</p>
+            <div class="about-content">
+                <img src="images/PXL_20250809_212411574.PORTRAIT.jpg" alt="Hannah Redford" class="about-portrait">
+                <div class="about-text">
+                    <p>Hi, I'm Hannah. I'm a recent PhD from the University of Washington, where I study ecosystem structure using lidar and remote sensing. Most of my work is in the Sierra Nevada, looking at how vegetation comes back after high-severity fire and how fuel structure shapes what happens to homes in the wildland-urban interface.</p>
+                    <p>I came to remote sensing through fire ecology, with a background in prairie ecosystem ecology and prescribed fire research across Florida pine flatwoods. That history manifests in my perspective of fire as part of systems, not a disruption to them.</p>
+                    <p>When I'm not working I'm usually cooking, foraging for mushrooms in the Cascades, or training for ultramarathons.</p>
+                </div>
+            </div>
         </section>
 
         <section id="projects">

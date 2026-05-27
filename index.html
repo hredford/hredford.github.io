@@ -1,4 +1,3 @@
-# hredford.github.io
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,14 +85,28 @@
         .project-card {
             background: white;
             border-radius: 8px;
-            padding: 1.5rem;
+            overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #e2e8f0;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+            flex-grow: 1;
         }
 
         .project-card h3 {
@@ -104,17 +117,6 @@
         .project-card p {
             color: #666;
             margin-bottom: 1rem;
-        }
-
-        .project-link {
-            display: inline-block;
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .project-link:hover {
-            text-decoration: underline;
         }
 
         .skills {
@@ -189,28 +191,33 @@
         <section id="about">
             <h2>About Me</h2>
             <p>Site In Progress.</p>
-            <p> </p>
         </section>
 
         <section id="projects">
             <h2>Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3>Project Title 1</h3>
-                    <p>Brief description of your project, the problem it solves, and the technologies used.</p>
-                    <a href="#" class="project-link">View Project →</a>
+                    <img src="images/yosemite-regen.png" alt="Post-fire regeneration in Yosemite National Park" class="project-image">
+                    <div class="project-content">
+                        <h3>Yosemite Regeneration Detection</h3>
+                        <p>Detecting post-fire conifer, oak, and shrub regeneration in Yosemite National Park using airborne lidar and multispectral imagery. Combines structural metrics with spectral indices in ordinal logistic regression models to classify regeneration across high-severity fire patches.</p>
+                    </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>Project Title 2</h3>
-                    <p>Brief description of your project, the problem it solves, and the technologies used.</p>
-                    <a href="#" class="project-link">View Project →</a>
+                    <img src="images/understory-als.png" alt="Understory vegetation segmentation from airborne lidar" class="project-image">
+                    <div class="project-content">
+                        <h3>Understory Vegetation Segmentation with ALS</h3>
+                        <p>A method for isolating subcanopy point clouds from airborne lidar to characterize understory vegetation structure. Validated against terrestrial lidar across sites in Oregon, Georgia, and California, enabling landscape-scale understory mapping where field measurements are impractical.</p>
+                    </div>
                 </div>
 
                 <div class="project-card">
-                    <h3>Project Title 3</h3>
-                    <p>Brief description of your project, the problem it solves, and the technologies used.</p>
-                    <a href="#" class="project-link">View Project →</a>
+                    <img src="images/zone2VP.PNG" alt="Lidar-derived fuel mapping in the wildland-urban interface" class="project-image">
+                    <div class="project-content">
+                        <h3>Lidar for Defensible Space Fuel Mapping</h3>
+                        <p>Mapping fuel structure across defensible space zones in the wildland-urban interface using airborne lidar. Spatial GAM models link lidar-derived fuel metrics to housing loss patterns during the 2020 Creek Fire, identifying ladder fuels as a key predictor of structure survival.</p>
+                    </div>
                 </div>
             </div>
         </section>
